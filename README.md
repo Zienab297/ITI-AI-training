@@ -1,6 +1,5 @@
 # ITI-training
 Two weeks of AI-intensive training
-<br/> <br/>
 ## Final project
 Trained several models on the Diabetes dataset. <br/>
 Explored the data checking for duplicates, nulls, and outliers. I used a box plot to detect outliers and found several in most columns. Applied quartile to normalize the data. To find relations between data visualized using pair plot and heat map.
