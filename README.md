@@ -19,3 +19,8 @@ PCA is a technique for dimensionality reduction that is used to improve model pe
 ### Models
 #### Linear Regression
 Applied the ```train_test_split``` function to split data into the PCA components and the target column which is ``` Diabetes Pedigree Function``` and split them into train and test. The used model was ```LinearRegression``` built-in function from ```sklearn.linear_model```, then fitted the data on the train data. Ran the model on the X test set to predict the output. The mean square error resulted was ```0.0815```.
+### Logistic Regression
+1. **Data Preprocessing**: Cleaned and prepared the dataset for model training.
+2. **Dimensionality Reduction**: Applied PCA to reduce feature dimensionality.
+3. **Model Training**: Trained the logistic regression model on the reduced dataset.
+4. **Performance**: The application of PCA resulted in improved accuracy, reaching **75%**.
