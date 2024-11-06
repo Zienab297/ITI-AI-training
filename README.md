@@ -1,26 +1,50 @@
-# ITI-training
-Two weeks of AI-intensive training
-## Final project
-Trained several models on the Diabetes dataset. <br/>
-Explored the data checking for duplicates, nulls, and outliers. I used a box plot to detect outliers and found several in most columns. Applied quartile to normalize the data. To find relations between data visualized using pair plot and heat map.
-### Dataset Description
-The data contains 9 features <br/>
-* Number of Pregnancies
-* Glucose level
-* Blood Pressure
-* Skin Thickness
-* Insulin Level
-* BMI
-* Diabetes Pedigree Function (Target for Regression)
-* Age
-* Outcome (Whether the person has diabetes or not)
-### Principal Component Analysis(PCA)
-PCA is a technique for dimensionality reduction that is used to improve model performance. It reduces the dimensions of the data preserving the original information. It works by transforming potentially correlated variables into a smaller set of variables, called principal components. This improved method improved accuracy and reduced the mean square error.
-### Models
-#### Linear Regression
-Applied the ```train_test_split``` function to split data into the PCA components and the target column which is ``` Diabetes Pedigree Function``` and split them into train and test. The used model was ```LinearRegression``` built-in function from ```sklearn.linear_model```, then fitted the data on the train data. Ran the model on the X test set to predict the output. The mean square error resulted was ```0.0815```.
-### Logistic Regression
-1. **Data Preprocessing**: Cleaned and prepared the dataset for model training.
-2. **Dimensionality Reduction**: Applied PCA to reduce feature dimensionality.
-3. **Model Training**: Trained the logistic regression model on the reduced dataset.
-4. **Performance**: The application of PCA resulted in improved accuracy, reaching **75%**.
+# Final Project: Diabetes Prediction and Analysis
+
+## Overview
+This project explores and applies machine-learning techniques to predict diabetes outcomes based on patient health data. The dataset is processed, visualized, and modeled using regression, classification, and clustering techniques. The project output includes model predictions, visualizations, and accuracy/error metrics for each model.
+
+## Data Preprocessing
+- **Outlier Removal**: Outliers were managed using the Interquartile Range (IQR) method.
+- **Scaling**: StandardScaler was applied to normalize PCA and model input features.
+- **Principal Component Analysis (PCA)**: PCA was performed for dimensionality reduction, retaining 2 components.
+
+## Models and Equations
+
+### 1. **Linear Regression**
+   - **Equation**: $` y = wX + b `$
+   - **Metrics**: Mean Squared Error (MSE) on the test set.
+   - **Performance**: MSE is evaluated to assess accuracy.
+
+### 2. **Logistic Regression**
+   - **Equation**: $` P(Y=1|X) = \frac{1}{1 + e^{-(wX + b)}} `$
+   - **Metrics**: MSE, ROC AUC Score, Classification Report, Confusion Matrix.
+   - **Performance**: Provides accuracy on diabetes classification.
+
+### 3. **Decision Tree Regressor**
+   - **Equation**: Recursive partitioning divides data points based on feature thresholds.
+   - **Metrics**: MSE for regression tasks.
+   - **Performance**: Outputs prediction error in regression.
+
+### 4. **K-Nearest Neighbors (KNN)**
+   - **Equation**: Distance-based prediction based on k-nearest data points.
+   - **Metrics**: ROC AUC Score, Classification Report, Confusion Matrix.
+   - **Performance**: Measures accuracy in classifying diabetes.
+
+### 5. **Artificial Neural Network (ANN)**
+   - **Architecture**: 3-layer network (128, 64, 1 nodes) with ReLU and Sigmoid activation.
+   - **Loss Function**: Binary Crossentropy.
+   - **Metrics**: Accuracy on test data.
+   - **Performance**: Evaluates model accuracy over 10 epochs.
+
+### 6. **Support Vector Machine (SVM)**
+   - **Equation**: Maximizes the margin between classes.
+   - **Metrics**: MSE, ROC AUC Score, Classification Report, Confusion Matrix.
+   - **Performance**: SVM model accuracy in diabetes classification.
+
+### 7. **K-Means Clustering**
+   - **Equation**: $` \text{minimize} \sum_{i=1}^k \sum_{x \in C_i} \|x - \mu_i\|^2 `$
+   - **Metrics**: Silhouette Score for clustering quality.
+   - **Performance**: Optimal clusters analyzed; scores achieved around 0.499.
+
+## Output and Evaluation
+Each model's predictions are saved as `.csv` files and performance metrics are calculated for each, focusing on either MSE for regression tasks or classification metrics (e.g., ROC AUC, accuracy) for classification tasks.
